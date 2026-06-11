@@ -113,11 +113,18 @@ const stories = [
     <section class="bg-gradient-to-b from-blue-950 to-blue-900 text-white">
       <div class="mx-auto max-w-6xl px-4 py-14 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-20">
         <div class="space-y-6">
-          <span
-            class="inline-block rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-200"
-          >
-            Malaysian Insurance Insights 2026
-          </span>
+          <div class="inline-block rounded-lg bg-white px-4 py-2.5 shadow-lg">
+            <img
+              :src="site.logo"
+              :alt="site.name"
+              class="h-10 w-auto sm:h-11"
+              width="200"
+              height="48"
+            />
+          </div>
+          <p class="text-base italic leading-relaxed text-red-200 sm:text-lg">
+            {{ site.tagline }}
+          </p>
           <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
             92% of Malaysians Over 40 Have Coverage Gaps —
             <span class="text-blue-300">Are You Protected?</span>

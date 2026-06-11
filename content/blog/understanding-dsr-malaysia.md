@@ -19,4 +19,4 @@ Your DSR is essentially your total monthly debt commitments divided by your net 
 
 ## How we help
 
-At Shield Advisory Group, we analyse your profile across multiple banks to find the institution most likely to approve your application at competitive rates — without you visiting each branch individually.
+At Lumos Advisory, we analyse your profile across multiple banks to find the institution most likely to approve your application at competitive rates — without you visiting each branch individually.

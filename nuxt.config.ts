@@ -21,16 +21,19 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Lumos Advisory Group — Insurance & Financial Planning Malaysia',
+      title: 'Lumos Advisory — Breaking the Insurance Industry Taboo',
       meta: [
         {
           name: 'description',
           content:
-            'Licensed insurance advisory in Malaysia. Free portfolio review, medical card upgrades, critical illness & eldercare planning.',
+            'Lumos Advisory — breaking the insurance industry taboo. Free portfolio review, medical cards, critical illness & eldercare planning in Malaysia.',
         },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/jpeg', href: '/logo-lumos.jpg' },
+        { rel: 'apple-touch-icon', href: '/logo-lumos.jpg' },
+      ],
     },
   },
 

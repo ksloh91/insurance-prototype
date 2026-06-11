@@ -11,7 +11,7 @@ if (!article.value) {
 }
 
 useSeoMeta({
-  title: `${article.value.title} — Shield Advisory Group`,
+  title: `${article.value.title} — Lumos Advisory`,
   description: article.value.description,
 })
 </script>
