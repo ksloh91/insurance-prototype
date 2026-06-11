@@ -25,10 +25,16 @@ useSeoMeta({
         ← All articles
       </NuxtLink>
 
-      <header class="mt-6 space-y-3 border-b border-slate-200 pb-8">
+      <header class="mt-6 space-y-4 border-b border-slate-200 pb-8">
+        <img
+          v-if="article?.image"
+          :src="article.image"
+          :alt="article.title"
+          class="w-full rounded-2xl object-cover shadow-md"
+        />
         <time
           v-if="article?.date"
-          class="text-xs font-semibold uppercase tracking-wider text-blue-600"
+          class="text-xs font-semibold uppercase tracking-wider text-red-600"
         >
           {{ new Date(article.date).toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' }) }}
         </time>

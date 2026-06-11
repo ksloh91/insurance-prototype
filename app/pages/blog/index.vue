@@ -25,21 +25,29 @@ useSeoMeta({
         <article
           v-for="article in articles"
           :key="article.path"
-          class="rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-md"
+          class="overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:shadow-md"
         >
-          <NuxtLink :to="article.path" class="block space-y-2">
-            <time
-              v-if="article.date"
-              class="text-xs font-semibold uppercase tracking-wider text-blue-600"
-            >
-              {{ new Date(article.date).toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' }) }}
-            </time>
-            <h2 class="text-xl font-bold text-slate-900 hover:text-blue-700">
-              {{ article.title }}
-            </h2>
-            <p v-if="article.description" class="text-sm text-slate-600">
-              {{ article.description }}
-            </p>
+          <NuxtLink :to="article.path" class="block">
+            <img
+              v-if="article.image"
+              :src="article.image"
+              :alt="article.title"
+              class="aspect-[16/9] w-full object-cover"
+            />
+            <div class="space-y-2 p-6">
+              <time
+                v-if="article.date"
+                class="text-xs font-semibold uppercase tracking-wider text-red-600"
+              >
+                {{ new Date(article.date).toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+              </time>
+              <h2 class="text-xl font-bold text-slate-900 hover:text-red-700">
+                {{ article.title }}
+              </h2>
+              <p v-if="article.description" class="text-sm text-slate-600">
+                {{ article.description }}
+              </p>
+            </div>
           </NuxtLink>
         </article>
       </div>
