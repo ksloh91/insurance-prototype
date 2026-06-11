@@ -1,0 +1,10 @@
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+# Enable Identity + Git Gateway in Netlify dashboard for /admin CMS access
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200

@@ -1,0 +1,30 @@
+# Decap CMS — git-based admin for content/blog/
+# After deploy: enable Netlify Identity + Git Gateway, then visit /admin/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Optional: set your live URL after first deploy (helps preview links)
+# site_url: https://your-site.netlify.app
+# display_url: https://your-site.netlify.app
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: blog
+    label: Blog Articles
+    label_singular: Blog Article
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, hint: "Short summary for SEO and listing cards" }
+      - { label: Publish Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Body, name: body, widget: markdown }
