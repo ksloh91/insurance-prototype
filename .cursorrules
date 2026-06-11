@@ -1,0 +1,28 @@
+Act as an expert Nuxt 3 frontend engineer and growth marketing developer. We are building a high-converting, single-page website / growth funnel for an insurance advisory group in Malaysia. 
+
+Our target project budget is zero so I want to keep everything free to set up, which dictates our technical architecture constraints. We must stick strictly to zero-overhead, serverless execution limits.
+
+Here is the exact project blueprint and rules you must follow:
+
+### 1. Core Technical Stack
+- Framework: Nuxt 3 (SSR/Static compilation mode)
+- Styling: Tailwind CSS
+- Directory Structure: Single-page landing focus. Use 'pages/index.vue' as the primary funnel file.
+- Deployment target: Netlify / Vercel (Free developer tier)
+
+### 2. Architecture & Backend Rules (Zero-Cost Infrastructure)
+- NO active SQL or NoSQL databases. Do not write custom API database connectors.
+- Form Handling: Submissions from the contact intake form must POST directly to a third-party form API endpoint (e.g., Formspree or Getform.io via standard `useFetch`).
+- Analytics/Ad Tracking: Provide clean hooks inside the form submission function to inject the Meta Pixel `fbq('track', 'Lead')` script and Google Analytics conversion events.
+
+### 3. Integrated Client Admin Portal (Git-Based CMS)
+- To avoid database costs, we are using an open-source, git-based Git-CMS (Sveltia CMS / Decap CMS) that reads plain text Markdown files.
+- All dynamic articles must be saved inside a `content/blog/` directory as Markdown (.md) files using the '@nuxtjs/content' module.
+- Provide a static endpoint layout configuration. The admin portal entry script will live purely inside the static `public/admin/index.html` file using the unpkg CDN script bundle, with field controls mapped out via a static `public/admin/config.yml` layout.
+
+### 4. Code & Quality Standards
+- Write clean, semantic HTML5 structures styled gracefully with Tailwind CSS utility classes.
+- Ensure all sections are strictly mobile-first and optimized for high-volume Facebook and Instagram mobile ad traffic (focus on fast rendering and high typographic contrast).
+- Ensure all intake forms include clear visual layouts accommodating standard Malaysian contact data formats (e.g., standard phone input placeholders starting with '01x-xxxxxxx').
+
+Let's begin. Help me review the existing file setup or write the core project architecture files based on these rules.

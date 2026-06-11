@@ -1,4 +1,4 @@
-<script setup lang="ts">
+image.png<script setup lang="ts">
 const route = useRoute()
 const slug = computed(() => `/blog/${(route.params.slug as string[]).join('/')}`)
 

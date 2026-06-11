@@ -13,7 +13,7 @@ function getBlogPrerenderRoutes(): string[] {
 }
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@vueuse/motion/nuxt'],
 
   compatibilityDate: '2026-06-11',
 

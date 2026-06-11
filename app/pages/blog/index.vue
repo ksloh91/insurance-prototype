@@ -21,16 +21,21 @@ useSeoMeta({
     <LandingSiteHeader />
 
     <main class="mx-auto max-w-4xl px-4 py-12">
-      <h1 class="mb-2 text-3xl font-bold text-slate-900">Articles & Insights</h1>
-      <p class="mb-10 text-slate-500">
-        Educational guides on insurance, loans, and financial planning in Malaysia.
-      </p>
+      <LandingReveal>
+        <h1 class="mb-2 text-3xl font-bold text-slate-900">Articles & Insights</h1>
+        <p class="mb-10 text-slate-500">
+          Educational guides on insurance, loans, and financial planning in Malaysia.
+        </p>
+      </LandingReveal>
 
       <div v-if="articles?.length" class="space-y-6">
-        <article
-          v-for="article in articles"
+        <LandingReveal
+          v-for="(article, i) in articles"
           :key="article.path"
-          class="overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:shadow-md"
+          :delay="i * 100"
+        >
+        <article
+          class="overflow-hidden rounded-xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
         >
           <NuxtLink :to="article.path" class="block">
             <img
@@ -55,6 +60,7 @@ useSeoMeta({
             </div>
           </NuxtLink>
         </article>
+        </LandingReveal>
       </div>
 
       <p v-else class="text-slate-500">No articles published yet. Check back soon.</p>

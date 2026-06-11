@@ -110,81 +110,108 @@ const stories = [
     <LandingSiteHeader />
 
     <!-- Hero: V100-style urgency hook -->
-    <section class="bg-gradient-to-b from-blue-950 to-blue-900 text-white">
-      <div class="mx-auto max-w-6xl px-4 py-14 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-20">
+    <section class="relative overflow-hidden bg-gradient-to-b from-blue-950 to-blue-900 text-white">
+      <div
+        class="pointer-events-none absolute -left-1/4 top-0 h-96 w-96 rounded-full bg-red-500/10 blur-3xl motion-safe:animate-pulse"
+        aria-hidden="true"
+      />
+      <div
+        class="pointer-events-none absolute -right-1/4 bottom-0 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl motion-safe:animate-pulse"
+        aria-hidden="true"
+      />
+      <div class="relative mx-auto max-w-6xl px-4 py-14 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-20">
         <div class="space-y-6">
-          <p class="text-base italic leading-relaxed text-red-200 sm:text-lg">
-            {{ site.tagline }}
-          </p>
-          <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            92% of Malaysians Over 40 Have Coverage Gaps —
-            <span class="text-blue-300">Are You Protected?</span>
-          </h1>
-          <p class="text-lg leading-relaxed text-blue-100">
-            Stop relying on medical insurance that only covers hospital bills.
-            Discover the overlooked plans that protect long-term care, critical illness,
-            and your family’s financial future.
-          </p>
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#lead-form"
-              class="rounded-xl bg-amber-400 px-8 py-4 text-center font-bold text-blue-950 shadow-lg transition hover:bg-amber-300"
-            >
-              Get Your Free Portfolio Review
-            </a>
-            <a
-              :href="`https://wa.me/${config.public.whatsappNumber}`"
-              target="_blank"
-              rel="noopener"
-              class="rounded-xl border border-white/30 px-8 py-4 justify-center text-center font-bold transition hover:bg-white/10 flex items-center gap-2"
-            >
-              Chat on WhatsApp
-              <img src="/images/icon-whatsapp.png" alt="WhatsApp" class="w-8" />
-            </a>
-          </div>
-          <p class="text-sm text-blue-300">
-            Free consultation · No hidden charges · Licensed advisors
-          </p>
+          <LandingReveal :delay="0" on-mount>
+            <p class="text-base italic leading-relaxed text-red-200 sm:text-lg">
+              {{ site.tagline }}
+            </p>
+          </LandingReveal>
+          <LandingReveal :delay="80" on-mount>
+            <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              92% of Malaysians Over 40 Have Coverage Gaps —
+              <span class="text-blue-300">Are You Protected?</span>
+            </h1>
+          </LandingReveal>
+          <LandingReveal :delay="160" on-mount>
+            <p class="text-lg leading-relaxed text-blue-100">
+              Stop relying on medical insurance that only covers hospital bills.
+              Discover the overlooked plans that protect long-term care, critical illness,
+              and your family’s financial future.
+            </p>
+          </LandingReveal>
+          <LandingReveal :delay="240" on-mount>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#lead-form"
+                class="rounded-xl bg-amber-400 px-8 py-4 text-center font-bold text-blue-950 shadow-lg shadow-amber-400/20 transition duration-300 hover:scale-[1.02] hover:bg-amber-300 hover:shadow-amber-400/30 active:scale-[0.98]"
+              >
+                Get Your Free Portfolio Review
+              </a>
+              <a
+                :href="`https://wa.me/${config.public.whatsappNumber}`"
+                target="_blank"
+                rel="noopener"
+                class="flex items-center justify-center gap-2 rounded-xl border border-white/30 px-8 py-4 text-center font-bold transition duration-300 hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98]"
+              >
+                Chat on WhatsApp
+                <img src="/images/icon-whatsapp.png" alt="WhatsApp" class="w-8" />
+              </a>
+            </div>
+          </LandingReveal>
+          <LandingReveal :delay="320" on-mount>
+            <p class="text-sm text-blue-300">
+              Free consultation · No hidden charges · Licensed advisors
+            </p>
+          </LandingReveal>
         </div>
 
-        <div class="mt-10 lg:mt-0">
+        <LandingReveal :delay="200" :y="40" on-mount class="mt-10 lg:mt-0">
           <LandingLeadForm />
-        </div>
+        </LandingReveal>
       </div>
     </section>
 
     <!-- Trust stats: MET-style -->
     <section class="border-b border-slate-200 bg-white py-12">
       <div class="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 md:grid-cols-4">
-        <div v-for="stat in stats" :key="stat.label" class="text-center">
+        <LandingReveal
+          v-for="(stat, i) in stats"
+          :key="stat.label"
+          :delay="i * 80"
+          class="text-center"
+        >
           <div class="text-3xl font-extrabold text-blue-700">{{ stat.value }}</div>
           <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-500">
             {{ stat.label }}
           </p>
-        </div>
+        </LandingReveal>
       </div>
     </section>
 
     <!-- 3 concerns: V100-style -->
     <section class="py-16">
       <div class="mx-auto max-w-6xl px-4">
-        <div class="mx-auto mb-12 max-w-2xl text-center">
+        <LandingReveal class="mx-auto mb-12 max-w-2xl text-center">
           <h2 class="text-3xl font-bold text-slate-900">
             The 3 Biggest Concerns Stopping Most Malaysians
           </h2>
           <p class="mt-3 text-slate-500">
             It’s normal to feel this way. That’s exactly why we offer a free, no-pressure review.
           </p>
-        </div>
+        </LandingReveal>
         <div class="grid gap-6 md:grid-cols-3">
-          <article
-            v-for="item in concerns"
+          <LandingReveal
+            v-for="(item, i) in concerns"
             :key="item.title"
-            class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            :delay="i * 100"
           >
-            <h3 class="mb-3 text-lg font-bold text-slate-900">{{ item.title }}</h3>
-            <p class="text-sm leading-relaxed text-slate-600">{{ item.body }}</p>
-          </article>
+            <article
+              class="h-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+            >
+              <h3 class="mb-3 text-lg font-bold text-slate-900">{{ item.title }}</h3>
+              <p class="text-sm leading-relaxed text-slate-600">{{ item.body }}</p>
+            </article>
+          </LandingReveal>
         </div>
       </div>
     </section>
@@ -192,31 +219,37 @@ const stories = [
     <!-- Harsh truth / stats block -->
     <section class="bg-slate-900 py-16 text-white">
       <div class="mx-auto max-w-4xl space-y-6 px-4 text-center">
-        <h2 class="text-3xl font-bold">The Harsh Truth About Aging in Malaysia</h2>
-        <p class="text-lg text-slate-300">
-          70% of people over 65 will need long-term care — yet only 20% have adequate coverage.
-          The rest pay out of pocket or become a burden on their children.
-        </p>
+        <LandingReveal>
+          <h2 class="text-3xl font-bold">The Harsh Truth About Aging in Malaysia</h2>
+          <p class="mt-4 text-lg text-slate-300">
+            70% of people over 65 will need long-term care — yet only 20% have adequate coverage.
+            The rest pay out of pocket or become a burden on their children.
+          </p>
+        </LandingReveal>
         <div class="grid gap-4 pt-4 sm:grid-cols-3">
-          <div class="rounded-xl bg-slate-800 p-5">
-            <div class="text-2xl font-bold text-amber-400">RM 7,000</div>
-            <p class="mt-1 text-sm text-slate-400">Avg. monthly care cost</p>
-          </div>
-          <div class="rounded-xl bg-slate-800 p-5">
-            <div class="text-2xl font-bold text-amber-400">38%</div>
-            <p class="mt-1 text-sm text-slate-400">Leading cause: Stroke</p>
-          </div>
-          <div class="rounded-xl bg-slate-800 p-5">
-            <div class="text-2xl font-bold text-amber-400">4 yrs</div>
-            <p class="mt-1 text-sm text-slate-400">Average care period</p>
-          </div>
+          <LandingReveal
+            v-for="(item, i) in [
+              { v: 'RM 7,000', l: 'Avg. monthly care cost' },
+              { v: '38%', l: 'Leading cause: Stroke' },
+              { v: '4 yrs', l: 'Average care period' },
+            ]"
+            :key="item.l"
+            :delay="i * 100"
+          >
+            <div class="rounded-xl bg-slate-800 p-5 transition duration-300 hover:bg-slate-700/80 hover:ring-1 hover:ring-amber-400/30">
+              <div class="text-2xl font-bold text-amber-400">{{ item.v }}</div>
+              <p class="mt-1 text-sm text-slate-400">{{ item.l }}</p>
+            </div>
+          </LandingReveal>
         </div>
-        <a
-          href="#lead-form"
-          class="mt-6 inline-block rounded-xl bg-blue-600 px-8 py-4 font-bold transition hover:bg-blue-500"
-        >
-          Check My Coverage Gaps — Free
-        </a>
+        <LandingReveal :delay="200">
+          <a
+            href="#lead-form"
+            class="mt-6 inline-block rounded-xl bg-blue-600 px-8 py-4 font-bold shadow-lg shadow-blue-600/30 transition duration-300 hover:scale-[1.02] hover:bg-blue-500 active:scale-[0.98]"
+          >
+            Check My Coverage Gaps — Free
+          </a>
+        </LandingReveal>
       </div>
     </section>
 
@@ -232,10 +265,13 @@ const stories = [
           </p>
         </div>
         <div class="grid gap-6 md:grid-cols-2">
-          <div
-            v-for="side in [comparison.left, comparison.right]"
+          <LandingReveal
+            v-for="(side, i) in [comparison.left, comparison.right]"
             :key="side.title"
-            class="overflow-hidden rounded-2xl border border-slate-200"
+            :delay="i * 120"
+          >
+          <div
+            class="overflow-hidden rounded-2xl border border-slate-200 transition duration-300 hover:shadow-lg"
           >
             <div
               class="px-6 py-4 font-bold"
@@ -258,6 +294,7 @@ const stories = [
               </div>
             </dl>
           </div>
+          </LandingReveal>
         </div>
       </div>
     </section>
@@ -274,14 +311,18 @@ const stories = [
           </p>
         </div>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article
-            v-for="pillar in pillars"
+          <LandingReveal
+            v-for="(pillar, i) in pillars"
             :key="pillar.title"
-            class="rounded-xl border border-slate-200 bg-white p-6"
+            :delay="i * 80"
           >
-            <h3 class="mb-2 font-bold text-blue-700">{{ pillar.title }}</h3>
-            <p class="text-sm leading-relaxed text-slate-600">{{ pillar.body }}</p>
-          </article>
+            <article
+              class="h-full rounded-xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-md"
+            >
+              <h3 class="mb-2 font-bold text-blue-700">{{ pillar.title }}</h3>
+              <p class="text-sm leading-relaxed text-slate-600">{{ pillar.body }}</p>
+            </article>
+          </LandingReveal>
         </div>
       </div>
     </section>
@@ -293,10 +334,13 @@ const stories = [
           Real Client Outcomes
         </h2>
         <div class="grid gap-6 md:grid-cols-2">
-          <blockquote
-            v-for="story in stories"
+          <LandingReveal
+            v-for="(story, i) in stories"
             :key="story.tag"
-            class="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm"
+            :delay="i * 120"
+          >
+          <blockquote
+            class="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition duration-300 hover:shadow-md"
           >
             <span
               class="mb-3 inline-block rounded-full bg-blue-100 px-3 py-0.5 text-xs font-semibold text-blue-700"
@@ -305,6 +349,7 @@ const stories = [
             </span>
             <p class="text-sm italic leading-relaxed text-slate-700">“{{ story.quote }}”</p>
           </blockquote>
+          </LandingReveal>
         </div>
       </div>
     </section>
@@ -312,9 +357,12 @@ const stories = [
     <!-- Advisor profile -->
     <section class="py-16">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-2">
-        <div class="flex aspect-square max-w-sm items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 text-6xl">
-          👤
-        </div>
+        <LandingReveal>
+          <div class="flex aspect-square max-w-sm items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 text-6xl shadow-inner">
+            👤
+          </div>
+        </LandingReveal>
+        <LandingReveal :delay="120">
         <div class="space-y-4">
           <span class="text-sm font-semibold uppercase tracking-wider text-blue-600">
             Meet Your Advisor
@@ -338,6 +386,7 @@ const stories = [
             </li>
           </ul>
         </div>
+        </LandingReveal>
       </div>
     </section>
 
@@ -366,17 +415,19 @@ const stories = [
     </section>
 
     <!-- Bottom CTA + form -->
-    <section class="bg-gradient-to-b from-slate-900 to-blue-950 py-20" id="lead-form">
+    <section class="bg-gradient-to-b from-slate-900 to-blue-950 py-20">
       <div class="mx-auto max-w-xl px-4">
-        <div class="mb-8 text-center text-white">
+        <LandingReveal class="mb-8 text-center text-white">
           <h2 class="text-2xl font-bold sm:text-3xl">
             The Best Time to Plan Was Yesterday. The Second-Best Is Today.
           </h2>
           <p class="mt-3 text-blue-200">
             Free portfolio review · No obligation · Licensed Malaysian advisors
           </p>
-        </div>
-        <LandingLeadForm />
+        </LandingReveal>
+        <LandingReveal :delay="100">
+          <LandingLeadForm anchor-id="lead-form" />
+        </LandingReveal>
       </div>
     </section>
 

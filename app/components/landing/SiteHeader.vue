@@ -20,7 +20,7 @@ const { site } = useAppConfig()
         </NuxtLink>
         <NuxtLink
           to="/#lead-form"
-          class="rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-red-700 sm:px-5"
+          class="rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm shadow-red-600/20 transition duration-300 hover:scale-[1.02] hover:bg-red-700 hover:shadow-red-600/30 active:scale-[0.98] sm:px-5"
         >
           Free Consultation
         </NuxtLink>
