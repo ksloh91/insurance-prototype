@@ -5,6 +5,7 @@ const props = withDefaults(
   defineProps<{
     variant?: 'dark' | 'light'
     compact?: boolean
+    anchorId?: string
   }>(),
   { variant: 'dark', compact: false },
 )
@@ -37,8 +38,8 @@ const isDark = computed(() => props.variant === 'dark')
 
 <template>
   <div
-    :id="compact ? undefined : 'lead-form'"
-    class="rounded-2xl p-6 shadow-2xl sm:p-8"
+    :id="anchorId"
+    class="scroll-mt-24 rounded-2xl p-6 shadow-2xl sm:p-8"
     :class="
       isDark
         ? 'bg-slate-900 text-white'

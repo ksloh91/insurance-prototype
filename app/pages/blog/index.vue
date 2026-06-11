@@ -1,9 +1,14 @@
 <script setup lang="ts">
 const { site } = useAppConfig()
 
-const { data: articles } = await useAsyncData('blog-list', () =>
-  queryCollection('blog').order('date', 'DESC').all(),
-)
+const { data: articles } = await useAsyncData('blog-list', async () => {
+  const items = await queryCollection('blog').all()
+  return [...items].sort((a, b) => {
+    const aTime = a.date ? new Date(String(a.date)).getTime() : 0
+    const bTime = b.date ? new Date(String(b.date)).getTime() : 0
+    return bTime - aTime
+  })
+})
 
 useSeoMeta({
   title: `Articles — ${site.name}`,

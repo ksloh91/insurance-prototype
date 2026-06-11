@@ -113,15 +113,6 @@ const stories = [
     <section class="bg-gradient-to-b from-blue-950 to-blue-900 text-white">
       <div class="mx-auto max-w-6xl px-4 py-14 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-20">
         <div class="space-y-6">
-          <div class="inline-block rounded-lg bg-white px-4 py-2.5 shadow-lg">
-            <img
-              :src="site.logo"
-              :alt="site.name"
-              class="h-10 w-auto sm:h-11"
-              width="200"
-              height="48"
-            />
-          </div>
           <p class="text-base italic leading-relaxed text-red-200 sm:text-lg">
             {{ site.tagline }}
           </p>
@@ -145,9 +136,10 @@ const stories = [
               :href="`https://wa.me/${config.public.whatsappNumber}`"
               target="_blank"
               rel="noopener"
-              class="rounded-xl border border-white/30 px-8 py-4 text-center font-bold transition hover:bg-white/10"
+              class="rounded-xl border border-white/30 px-8 py-4 justify-center text-center font-bold transition hover:bg-white/10 flex items-center gap-2"
             >
               Chat on WhatsApp
+              <img src="/images/icon-whatsapp.png" alt="WhatsApp" class="w-8" />
             </a>
           </div>
           <p class="text-sm text-blue-300">
@@ -374,7 +366,7 @@ const stories = [
     </section>
 
     <!-- Bottom CTA + form -->
-    <section class="bg-gradient-to-b from-slate-900 to-blue-950 py-20">
+    <section class="bg-gradient-to-b from-slate-900 to-blue-950 py-20" id="lead-form">
       <div class="mx-auto max-w-xl px-4">
         <div class="mb-8 text-center text-white">
           <h2 class="text-2xl font-bold sm:text-3xl">

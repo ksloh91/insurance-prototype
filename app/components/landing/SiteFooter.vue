@@ -27,7 +27,7 @@ const year = new Date().getFullYear()
       </div>
 
       <div class="flex flex-col items-center gap-2 pt-4">
-        <img :src="site.logo" :alt="site.name" class="h-8 w-auto opacity-80" width="128" height="32" />
+        <LandingSiteLogo size="footer" />
         <p class="text-sm italic text-slate-600">{{ site.tagline }}</p>
         <p>© {{ year }} {{ site.name }}. All rights reserved.</p>
       </div>
