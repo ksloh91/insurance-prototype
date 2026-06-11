@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Shield Advisory Group — Insurance & Financial Planning Malaysia',
+      title: 'Lumos Advisory Group — Insurance & Financial Planning Malaysia',
       meta: [
         {
           name: 'description',
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     public: {
       formspreeEndpoint:
         process.env.NUXT_PUBLIC_FORMSPREE_ENDPOINT ||
-        'https://formspree.io/f/YOUR_FORM_ID',
+        'https://formspree.io/f/mdavlbyq',
       gtagId: process.env.NUXT_PUBLIC_GTAG_ID || '',
       metaPixelId: process.env.NUXT_PUBLIC_META_PIXEL_ID || '',
       whatsappNumber: process.env.NUXT_PUBLIC_WHATSAPP_NUMBER || '60123456789',

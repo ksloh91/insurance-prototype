@@ -2,6 +2,10 @@
   command = "npm run generate"
   publish = "dist"
 
+[build.environment]
+  NUXT_PUBLIC_FORMSPREE_ENDPOINT = "https://formspree.io/f/mdavlbyq"
+  NUXT_PUBLIC_WHATSAPP_NUMBER = "60123456789"
+
 # Enable Identity + Git Gateway in Netlify dashboard for /admin CMS access
 
 [[redirects]]
