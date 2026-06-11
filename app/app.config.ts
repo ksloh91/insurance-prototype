@@ -1,5 +1,7 @@
 export default defineAppConfig({
   site: {
+    /** Set to false when launching the live site */
+    prototype: true,
     name: 'Lumos Advisory',
     logo: '/logo-lumos.jpg',
     tagline: '𝘽𝙧𝙚𝙖𝙠𝙞𝙣𝙜 𝙩𝙝𝙚 𝙞𝙣𝙨𝙪𝙧𝙖𝙣𝙘𝙚 𝙞𝙣𝙙𝙪𝙨𝙩𝙧𝙮 𝙩𝙖𝙗𝙤𝙤',

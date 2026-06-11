@@ -1,6 +1,8 @@
 <template>
   <NuxtRouteAnnouncer />
+  <LandingPrototypeBanner />
   <NuxtPage />
+  <LandingWhatsappFab />
 </template>
 
 <style>

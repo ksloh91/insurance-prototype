@@ -43,6 +43,10 @@ useSeoMeta({
               :src="article.image"
               :alt="article.title"
               class="aspect-[16/9] w-full object-cover"
+              width="800"
+              height="450"
+              loading="lazy"
+              decoding="async"
             />
             <div class="space-y-2 p-6">
               <time

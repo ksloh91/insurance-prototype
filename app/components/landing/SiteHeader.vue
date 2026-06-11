@@ -1,9 +1,22 @@
 <script setup lang="ts">
 const { site } = useAppConfig()
+const scrolled = ref(false)
+
+onMounted(() => {
+  const onScroll = () => {
+    scrolled.value = window.scrollY > 16
+  }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onUnmounted(() => window.removeEventListener('scroll', onScroll))
+})
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <header
+    class="sticky top-0 z-50 border-b bg-white/95 backdrop-blur transition-shadow duration-300"
+    :class="scrolled ? 'border-slate-200 shadow-md' : 'border-transparent shadow-none'"
+  >
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4">
       <NuxtLink to="/" class="flex min-w-0 flex-1 items-center gap-3 pr-2">
         <LandingSiteLogo size="header" />

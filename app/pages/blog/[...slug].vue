@@ -31,6 +31,11 @@ useSeoMeta({
           :src="article.image"
           :alt="article.title"
           class="w-full rounded-2xl object-cover shadow-md"
+          width="800"
+          height="450"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <time
           v-if="article?.date"

@@ -180,7 +180,9 @@ const stories = [
           :delay="i * 80"
           class="text-center"
         >
-          <div class="text-3xl font-extrabold text-blue-700">{{ stat.value }}</div>
+          <div class="text-3xl font-extrabold text-blue-700">
+            <LandingStatCounter :value="stat.value" />
+          </div>
           <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-500">
             {{ stat.label }}
           </p>
@@ -359,7 +361,15 @@ const stories = [
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-2">
         <LandingReveal>
           <div class="flex aspect-square max-w-sm items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 text-6xl shadow-inner">
-            👤
+            <img
+              src="/images/img-portrait.jpeg"
+              alt="Senior licensed insurance advisor at Lumos Advisory"
+              class="h-full w-full rounded-2xl object-cover"
+              width="400"
+              height="400"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </LandingReveal>
         <LandingReveal :delay="120">
@@ -393,15 +403,18 @@ const stories = [
     <!-- FAQ -->
     <section class="border-t border-slate-200 bg-white py-16">
       <div class="mx-auto max-w-3xl px-4">
-        <h2 class="mb-10 text-center text-3xl font-bold text-slate-900">
-          Frequently Asked Questions
-        </h2>
+        <LandingReveal class="mb-10 text-center">
+          <h2 class="text-3xl font-bold text-slate-900">
+            Frequently Asked Questions
+          </h2>
+        </LandingReveal>
         <div class="divide-y divide-slate-200">
-          <details
-            v-for="faq in faqs"
+          <LandingReveal
+            v-for="(faq, i) in faqs"
             :key="faq.q"
-            class="group py-4"
+            :delay="i * 60"
           >
+          <details class="group py-4">
             <summary class="cursor-pointer list-none font-semibold text-slate-900 marker:hidden">
               <span class="flex items-center justify-between gap-4">
                 {{ faq.q }}
@@ -410,6 +423,7 @@ const stories = [
             </summary>
             <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ faq.a }}</p>
           </details>
+          </LandingReveal>
         </div>
       </div>
     </section>

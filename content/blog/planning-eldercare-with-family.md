@@ -2,7 +2,7 @@
 title: Why Eldercare Planning Starts With an Honest Family Conversation
 description: Most Malaysian families avoid talking about aging until a crisis hits. Here's how to plan ahead — without the guilt, confusion, or financial shock.
 date: 2026-06-11
-image: /images/image-blog.png
+image: /images/image-blog.jpg
 ---
 
 Most of us find it easier to talk about holidays, property, or even politics than to ask: *"Mum, what happens if you need long-term care one day?"*
