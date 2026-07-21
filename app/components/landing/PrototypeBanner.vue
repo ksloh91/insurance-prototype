@@ -42,19 +42,19 @@ onUnmounted(() => {
         role="presentation"
       >
         <div
-          class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"
+          class="absolute inset-0 bg-ink/70 backdrop-blur-sm"
           aria-hidden="true"
           @click="close"
         />
 
         <div
-          class="relative w-full max-w-md rounded-2xl border border-amber-500/30 bg-white p-6 shadow-2xl shadow-slate-900/25 sm:p-8"
+          class="relative w-full max-w-md rounded-lg border border-coral/30 bg-daylight p-6 shadow-2xl shadow-ink/25 sm:p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="prototype-notice-title"
         >
           <div
-            class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-2xl"
+            class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral/10 text-2xl"
             aria-hidden="true"
           >
             🚧
@@ -62,19 +62,19 @@ onUnmounted(() => {
 
           <h2
             id="prototype-notice-title"
-            class="text-center text-lg font-bold text-slate-900 sm:text-xl"
+            class="text-center font-display text-lg font-bold text-ink sm:text-xl"
           >
             Prototype preview
           </h2>
 
-          <p class="mt-3 text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p class="mt-3 text-center text-sm leading-relaxed text-ink/70 sm:text-base">
             This site is a work-in-progress demo for your review. Content, branding, and forms are
             not final — please do not share publicly or treat it as live.
           </p>
 
           <button
             type="button"
-            class="mt-6 w-full rounded-lg bg-red-600 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-red-600/20 transition hover:bg-red-700 active:scale-[0.98]"
+            class="mt-6 w-full rounded-md bg-coral px-4 py-3 text-sm font-semibold text-daylight transition hover:bg-ink"
             @click="close"
           >
             I understand — view site

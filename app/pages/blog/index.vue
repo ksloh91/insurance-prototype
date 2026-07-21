@@ -17,13 +17,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-50">
+  <div class="min-h-screen bg-daylight font-sans text-ink">
     <LandingSiteHeader />
 
     <main class="mx-auto max-w-4xl px-4 py-12">
       <LandingReveal>
-        <h1 class="mb-2 text-3xl font-bold text-slate-900">Articles & Insights</h1>
-        <p class="mb-10 text-slate-500">
+        <h1 class="mb-2 font-display text-3xl font-bold text-ink">Articles & Insights</h1>
+        <p class="mb-10 text-ink/70">
           Educational guides on insurance, loans, and financial planning in Malaysia.
         </p>
       </LandingReveal>
@@ -32,11 +32,9 @@ useSeoMeta({
         <LandingReveal
           v-for="(article, i) in articles"
           :key="article.path"
-          :delay="i * 100"
+          :delay="i * 80"
         >
-        <article
-          class="overflow-hidden rounded-xl border border-slate-200 bg-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-        >
+        <article class="overflow-hidden border border-ink/10 bg-daylight transition duration-200 hover:border-coral/50">
           <NuxtLink :to="article.path" class="block">
             <img
               v-if="article.image"
@@ -51,14 +49,14 @@ useSeoMeta({
             <div class="space-y-2 p-6">
               <time
                 v-if="article.date"
-                class="text-xs font-semibold uppercase tracking-wider text-red-600"
+                class="font-mono text-xs font-semibold uppercase tracking-wider text-coral-deep"
               >
                 {{ new Date(article.date).toLocaleDateString('en-MY', { year: 'numeric', month: 'long', day: 'numeric' }) }}
               </time>
-              <h2 class="text-xl font-bold text-slate-900 hover:text-red-700">
+              <h2 class="font-display text-xl font-bold text-ink">
                 {{ article.title }}
               </h2>
-              <p v-if="article.description" class="text-sm text-slate-600">
+              <p v-if="article.description" class="text-sm text-ink/70">
                 {{ article.description }}
               </p>
             </div>
@@ -67,9 +65,9 @@ useSeoMeta({
         </LandingReveal>
       </div>
 
-      <p v-else class="text-slate-500">No articles published yet. Check back soon.</p>
+      <p v-else class="text-ink/70">No articles published yet. Check back soon.</p>
 
-      <NuxtLink to="/" class="mt-10 inline-block text-sm font-semibold text-blue-600 hover:underline">
+      <NuxtLink to="/" class="mt-10 inline-block text-sm font-semibold text-coral-deep hover:underline">
         ← Back to home
       </NuxtLink>
     </main>

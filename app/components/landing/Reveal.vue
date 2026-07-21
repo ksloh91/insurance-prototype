@@ -8,7 +8,7 @@ const props = withDefaults(
     /** Animate on mount (hero) vs on scroll into view */
     onMount?: boolean
   }>(),
-  { delay: 0, y: 28, onMount: false },
+  { delay: 0, y: 16, onMount: false },
 )
 
 const transition = {
